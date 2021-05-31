@@ -1,6 +1,6 @@
 stackbitVersion: ~0.3.0
 ssgName: hugo
-ssgVersion: '0.74.3'
+ssgVersion: 0.74.3
 buildCommand: hugo
 publishDir: public
 uploadDir: images
@@ -12,6 +12,7 @@ logicFields:
   - config.params.team.summary_large_truncate
   - config.params.baseURL
   - service.weight
+cmsName: git
 models:
   config:
     type: config
@@ -223,8 +224,10 @@ models:
   basicpage:
     type: page
     label: Basic Page
-    match: '*.md'
-    exclude: _index.md
+    match:
+      - '*.md'
+    exclude:
+      - _index.md
     fields:
       - type: string
         name: title
